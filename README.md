@@ -23,6 +23,30 @@ This backend is designed to integrate smoothly with the frontend, ensuring fast 
 |---------|-----------|-------------|
 | POST | `/api/register/` | Create a new editor account |
 | POST | `/api/login/` | Log in as a Chief Editor |
-| POST | `/api/forgot-password/` | Send password reset link or code |
-| POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using token or code |
+| POST | `/api/forgot-password/` | Send password reset link |
+| POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using token |
 
+### 2. News Management  
+| Method | Endpoint | Description |
+|---------|-----------|-------------|
+| POST | `/news/create/` | Create a new news article |
+| PUT | `/news/edit/<int:id>/` | Edit an existing article |
+| DELETE | `/news/delete/<int:id>/` | Delete a news article |
+| GET | `/news/all/` | Retrieve all published news |
+| GET | `/news/search/?title=keyword` | Search for news by title |
+
+### 3. Users
+
+
+## Tech Stack  
+- **Backend Framework:** Django & Django REST Framework (DRF)  
+- **Database:** PostgreSQL  
+- **Language:** Python 3.12.10  
+- **Authentication:** JWT (JSON Web Token)  
+- **Environment Management:** `.env`
+
+## Postman Documentation  
+The **Cray New Network API** is fully documented in Postman for easy testing and endpoint validation.  
+The collection includes requests for authentication, news management, and content search — with preconfigured methods, headers, and example payloads.  
+
+- **Postman Link:**
