@@ -21,8 +21,8 @@ This backend is designed to integrate smoothly with the frontend, ensuring fast 
 ### 1. Authentication  
 | Method | Endpoint | Description |
 |---------|-----------|-------------|
-| POST | `/auth/signup/` | Create a new editor account |
-| POST | `/auth/login/` | Log in as a Chief Editor |
-| POST | `/auth/forgot-password/` | Send password reset link or code |
-| POST | `/auth/reset-password/` | Reset password using token or code |
+| POST | `/api/register/` | Create a new editor account |
+| POST | `/api/login/` | Log in as a Chief Editor |
+| POST | `/api/forgot-password/` | Send password reset link or code |
+| POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using token or code |
 
