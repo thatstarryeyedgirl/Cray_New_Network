@@ -49,4 +49,6 @@ This backend is designed to integrate smoothly with the frontend, ensuring fast 
 The **Cray New Network API** is fully documented in Postman for easy testing and endpoint validation.  
 The collection includes requests for authentication, news management, and content search — with preconfigured methods, headers, and example payloads.  
 
-- **Postman Link:**
+- **Postman Link:** ``
+
+
