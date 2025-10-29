@@ -24,9 +24,9 @@ This backend is designed to integrate smoothly with the frontend, ensuring fast 
 | POST | `/api/register/` | Create a new editor account |
 | POST | `/api/login/` | Log in as a Chief Editor |
 | POST | `/api/forgot-password/` | Send password reset link |
-| POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using token |
+| POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using jwtoken |
 
-### 2. News Management  
+### 2. News Management 
 | Method | Endpoint | Description |
 |---------|-----------|-------------|
 | POST | `/news/create/` | Create a new news article |
