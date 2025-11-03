@@ -28,8 +28,11 @@ class EditNewsView(APIView):
     permission_classes = [permissions.IsAuthenticated] # only logged-in ChiefEditors/Users can edit
 
     def put(self, request, pk):
-        # feteched the news by id and ensures only the original author can edit it or return a 403 error if not authorized
-        news = get_object_or_404(News, pk=pk)
+        # fetch the news by id or return custom message if not found
+        try:
+            news = News.objects.get(pk=pk)
+        except News.DoesNotExist:
+            return Response({"error": "Story not found."}, status=status.HTTP_404_NOT_FOUND)
 
        
         if news.author != request.user:
@@ -49,18 +52,19 @@ class DeleteNewsView(APIView):
     permission_classes = [permissions.IsAuthenticated] # only logged-in ChiefEditors/Users can delete
 
     def delete(self, request, pk, *args, **kwargs):
-        # fetch the news by news id or return 404 if not found
-        news_item = get_object_or_404(News, pk=pk)
+        try:
+            news_item = News.objects.get(pk=pk)
+        except News.DoesNotExist:
+            return Response({"error": "No story found to delete."}, status=status.HTTP_404_NOT_FOUND)
 
-        # only the author or a staff/admin can delete the news
-        if not (news_item.author == request.user or request.user.is_staff or request.user.is_superuser): # checks if the logged-in 
-            # user is either the author of the news or has admin/staff privileges
-            return Response({"detail": "You do not have permission to delete this news."},
+        # only the author can delete the news
+        if news_item.author != request.user:
+            return Response({"error": "You can only delete news you created."},
                             status=status.HTTP_403_FORBIDDEN)
 
         # perform delete
         news_item.delete()
-        return Response({"message": "News deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"message": "News deleted successfully."}, status=status.HTTP_200_OK)
     
     
 class NewsListView(generics.ListAPIView):
