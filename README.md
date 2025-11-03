@@ -32,7 +32,7 @@ It provides secure authentication for **Chief Editors**, allowing them to:
 | POST | `/news/create/` | Create a new news article | Chief Editors |
 | PUT | `/news/edit/<int:id>/` | Edit an existing article | Chief Editors |
 | DELETE | `/news/delete/<int:id>/` | Delete a news article | Chief Editors |
-| GET | `/news/all/` | Retrieve all published news | Users & Chief Editors |
+| GET | `/news/list/` | Retrieve all published news | Users & Chief Editors |
 | GET | `/news/search/?title=keyword` | Search for news by title | Users & Chief Editors |
 
 
