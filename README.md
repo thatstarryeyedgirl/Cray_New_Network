@@ -27,15 +27,13 @@ This backend is designed to integrate smoothly with the frontend, ensuring fast 
 | POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using jwtoken |
 
 ### 2. News Management 
-| Method | Endpoint | Description |
-|---------|-----------|-------------|
-| POST | `/news/create/` | Create a new news article |
-| PUT | `/news/edit/<int:id>/` | Edit an existing article |
-| DELETE | `/news/delete/<int:id>/` | Delete a news article |
-| GET | `/news/all/` | Retrieve all published news |
-| GET | `/news/search/?title=keyword` | Search for news by title |
-
-### 3. Users
+| Method | Endpoint | Description | Accessible To |
+|---------|-----------|-------------|-------------|
+| POST | `/news/create/` | Create a new news article | Chief Editors |
+| PUT | `/news/edit/<int:id>/` | Edit an existing article | Chief Editors |
+| DELETE | `/news/delete/<int:id>/` | Delete a news article | Chief Editors |
+| GET | `/news/all/` | Retrieve all published news | Users & Chief Editors |
+| GET | `/news/search/?title=keyword` | Search for news by title | Users & Chief Editors |
 
 
 ## Tech Stack  
