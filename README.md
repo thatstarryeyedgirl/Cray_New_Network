@@ -47,6 +47,5 @@ It provides secure authentication for **Chief Editors**, allowing them to:
 The **Cray New Network API** is fully documented in Postman for easy testing and endpoint validation.  
 The collection includes requests for authentication, news management, and content search — with preconfigured methods, headers, and example payloads.  
 
-- **Postman Link:** ``
-
+- **Postman Link:** `https://documenter.getpostman.com/view/48778720/2sB3WpSMT5`
 
