@@ -98,5 +98,3 @@ class ResetPasswordSerializer(serializers.Serializer):
             raise serializers.ValidationError({"password": "Passwords do not match."})
         return data
     
-
-#
