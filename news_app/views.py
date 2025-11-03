@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from django.contrib.auth import get_user_model
 from .serializers import NewsSerializer
 from .models import News
-from django.shortcuts import get_object_or_404
 
 ChiefEditor = get_user_model() # gets the currently active user model which is ChiefEditor in this case
 
