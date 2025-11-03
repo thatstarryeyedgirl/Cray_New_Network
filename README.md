@@ -23,7 +23,7 @@ It provides secure authentication for **Chief Editors**, allowing them to:
 |---------|-----------|-------------|
 | POST | `/api/register/` | Create a new editor account |
 | POST | `/api/login/` | Log in as a Chief Editor |
-| POST | `/api/forgot-password/` | Send password reset link |
+| POST | `/api/forgot-password/` | Send password reset link via email |
 | POST | `/api/reset-password/<uidb64>/<token>/` | Reset password using jwtoken |
 
 ### 2. News Management 
