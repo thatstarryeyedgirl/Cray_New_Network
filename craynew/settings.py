@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'craynew.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 
+db_url = os.environ.get('DATABASE_URL')
+if isinstance(db_url, bytes):
+    db_url = db_url.decode()  # decode bytes if necessary
+
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(db_url, conn_max_age=600)
 }
 
 
