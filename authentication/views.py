@@ -86,7 +86,7 @@ class ForgotPasswordView(APIView):
         # Generates a password reset token and encodes the user's ID in base64
         token = default_token_generator.make_token(user)
         uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
-        reset_link = f"http://localhost:8000/auth/reset-password/{uidb64}/{token}/" # builds a clickable reset link
+        reset_link = f"craynewnetwork-production.up.railway.app/auth/reset-password/{uidb64}/{token}/" # builds a clickable reset link
 
         try: # sends the reset link to the user's email
             send_mail(
